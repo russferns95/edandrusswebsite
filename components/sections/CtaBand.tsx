@@ -24,7 +24,7 @@ export default function CtaBand({
           <span className="cta-orb cta-orb-2" aria-hidden="true" />
 
           <div className="cta-band-inner">
-            <div>
+            <div className="cta-band-copy">
               <h2 className="cta-band-title" id="ctaBandHeading">
                 {title}
               </h2>

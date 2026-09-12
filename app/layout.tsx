@@ -6,7 +6,10 @@ import SiteFooter from '@/components/layout/SiteFooter';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SkipLink from '@/components/layout/SkipLink';
 import StructuredData from '@/components/layout/StructuredData';
-import { site } from '@/lib/site';
+import { brandAliases, site, verification } from '@/lib/site';
+
+/* Previews must not be indexed, or they compete with the live site. */
+const isProduction = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'production';
 
 /* Self-hosted at build time: no render-blocking request to Google. */
 const manrope = Manrope({
@@ -23,39 +26,70 @@ const inter = Inter({
   display: 'swap',
 });
 
+const defaultTitle = `${site.name} | Digital Marketing Agency London`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `Digital Marketing Agency London | Full-Service Marketing | ${site.name}`,
+    default: defaultTitle,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
+  category: 'Marketing',
+
+  /* Brand spellings first: these are the terms people search by name. */
   keywords: [
+    ...brandAliases,
     'digital marketing agency London',
     'SEO agency London',
     'PPC agency London',
     'conversion rate optimisation',
     'web design London',
+    'founder-led marketing agency',
   ],
-  alternates: { canonical: '/' },
+
+  alternates: {
+    canonical: '/',
+  },
+
   openGraph: {
-    title: `Digital Marketing Agency London | Full-Service Marketing | ${site.name}`,
+    title: defaultTitle,
     description: site.description,
     type: 'website',
     locale: 'en_GB',
     siteName: site.name,
     url: site.url,
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: `Digital Marketing Agency London | ${site.name}`,
+    title: defaultTitle,
     description: site.description,
   },
+
   robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+    index: isProduction,
+    follow: isProduction,
+    googleBot: {
+      index: isProduction,
+      follow: isProduction,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
+
+  /* Populated once the domain is claimed in Search Console / Bing. */
+  verification: {
+    ...(verification.google ? { google: verification.google } : {}),
+    ...(verification.bing ? { other: { 'msvalidate.01': verification.bing } } : {}),
+  },
+
+  formatDetection: { telephone: true, address: true, email: true },
 };
 
 export const viewport: Viewport = {

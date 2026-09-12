@@ -175,6 +175,48 @@ JavaScript bundle small.
 
 ---
 
+## SEO
+
+Everything that can be handled in code is handled:
+
+- **Canonical URLs** on every page, resolved from the live domain. On Vercel
+  this falls back to the project production domain automatically.
+- **Per-page `<title>`, meta description and Open Graph tags** — no two pages
+  compete for the same terms.
+- **JSON-LD** describing the business (`ProfessionalService`), the site
+  (`WebSite`) and a breadcrumb trail on every inner page.
+- **`alternateName` brand spellings** — "Ed and Russ", "Ed & Russ", "Ed + Russ",
+  "EdandRuss" and more, in `brandAliases` in `lib/site.ts`. This is what tells a
+  search engine these all refer to one business.
+- **`sitemap.xml`** listing every route, and a **`robots.txt`** pointing at it.
+- **Generated social share image** and favicon (`app/opengraph-image.tsx`,
+  `app/icon.tsx`), plus a web manifest.
+- **Preview deploys are `noindex`** so they never outrank production.
+- Static pages, self-hosted fonts and no render-blocking requests, which keeps
+  Core Web Vitals healthy.
+
+### What code cannot do
+
+Ranking for the brand name is not something a codebase decides — Google does,
+and only after it has crawled the site. Once deployed:
+
+1. **Verify the domain in [Google Search Console](https://search.google.com/search-console)**
+   and submit `/sitemap.xml`. Without this, indexing can take weeks instead of
+   days. Use DNS verification, or set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`.
+2. **Use a real domain.** A `*.vercel.app` address can rank, but a matching
+   domain (`edandruss.com`) is by far the strongest signal for a brand search.
+   Once it is live, set `NEXT_PUBLIC_SITE_URL` and redeploy.
+3. **Create a Google Business Profile** for the London address. For a local
+   agency this usually does more for a brand-name search than anything on-page.
+4. **Get the name linked from elsewhere** — LinkedIn, Companies House,
+   directories, client sites. Brand queries are won on external signals.
+
+Misspellings such as "edd and russ" are handled by Google’s own spell
+correction once the brand is known to it. Nothing in the markup forces that;
+it follows from the site being indexed and linked to.
+
+---
+
 ## Spam handling
 
 The endpoint drops obvious bots without telling them: a hidden honeypot field, a

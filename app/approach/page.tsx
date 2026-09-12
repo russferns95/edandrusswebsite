@@ -1,19 +1,20 @@
-import type { Metadata } from 'next';
-
+import BreadcrumbSchema from '@/components/layout/BreadcrumbSchema';
 import PageHero from '@/components/layout/PageHero';
 import Approach from '@/components/sections/Approach';
 import CtaBand from '@/components/sections/CtaBand';
 import { pages } from '@/lib/content';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: pages.approach.metaTitle,
   description: pages.approach.metaDescription,
-  alternates: { canonical: '/approach' },
-};
+  path: '/approach',
+});
 
 export default function ApproachPage() {
   return (
     <>
+      <BreadcrumbSchema crumbs={[{ name: 'Our approach', path: '/approach' }]} />
       <PageHero
         kicker={pages.approach.kicker}
         title={pages.approach.title}
