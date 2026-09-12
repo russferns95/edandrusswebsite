@@ -17,7 +17,7 @@ export default function BlackBox() {
 
           <Reveal className="bb-intro">
             <p>
-              Most businesses struggle with agencies that report on impressions instead of revenue. At Sio, Ed
+              Most businesses struggle with agencies that report on impressions instead of revenue. At Ed
               &amp; Russ, we build connected digital systems where every channel supports your bottom line.
             </p>
           </Reveal>

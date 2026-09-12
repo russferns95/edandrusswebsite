@@ -4,11 +4,11 @@
  */
 
 export const site = {
-  name: 'Sio, Ed & Russ',
-  legalName: 'Sio, Ed & Russ',
+  name: 'Ed & Russ',
+  legalName: 'Ed & Russ',
   tagline: 'Founder-led digital marketing for ambitious brands.',
   description:
-    'Sio, Ed & Russ is a leading London digital marketing agency. We deliver data-driven SEO, PPC, web design, and content strategy designed to grow your business.',
+    'Ed & Russ is a leading London digital marketing agency. We deliver data-driven SEO, PPC, web design, and content strategy designed to grow your business.',
   locale: 'en-GB',
 
   /** Public site URL. Vercel sets VERCEL_URL automatically on preview deploys. */

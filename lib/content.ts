@@ -130,7 +130,7 @@ export const services: Service[] = [
 /* ----- About / story ----------------------------------------------------- */
 export const storyParagraphs = [
   'For years, the agency model has been broken. Large traditional marketing firms pitch clients using experienced directors, only to pass execution down to junior delegates.',
-  'At Sio, Ed & Russ, we operate differently. We are a founder-led digital marketing business based in London, serving brands across the UK and internationally. When you partner with us, you work directly with the specialists who architect, run, and optimize your campaigns.',
+  'At Ed & Russ, we operate differently. We are a founder-led digital marketing business based in London, serving brands across the UK and internationally. When you partner with us, you work directly with the specialists who architect, run, and optimize your campaigns.',
   'We combine technical precision with commercial strategy\u2014merging deep Search Engine Optimisation (SEO), high-yield Pay-Per-Click (PPC) execution, and conversion-rate-optimised (CRO) web design into a single growth engine.',
 ];
 

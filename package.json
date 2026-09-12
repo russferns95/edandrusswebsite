@@ -1,8 +1,8 @@
 {
-  "name": "sio-ed-russ",
+  "name": "ed-and-russ",
   "version": "1.0.0",
   "private": true,
-  "description": "Sio, Ed & Russ — founder-led digital marketing agency, London.",
+  "description": "Ed & Russ — founder-led digital marketing agency, London.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -9,7 +9,7 @@ export default function FeatureCards() {
     <section className="features" aria-labelledby="featuresHeading">
       <div className="shell">
         <h2 className="visually-hidden" id="featuresHeading">
-          What working with Sio, Ed &amp; Russ looks like
+          What working with Ed &amp; Russ looks like
         </h2>
 
         <div className="feature-grid">

@@ -1,7 +1,7 @@
-# Sio, Ed & Russ — marketing site
+# Ed & Russ — marketing site
 
 The landing page rebuilt as a **Next.js 16 (App Router) + TypeScript** application,
-converted from the original single-file `sio-ed-russ (1).html`
+converted from the original single-file HTML page
 (kept for reference in [`reference/`](reference/original-landing-page.html)).
 
 The design is unchanged where it was already working. What's new: a real contact
@@ -50,7 +50,7 @@ touching code.
 1. Sign up at [resend.com](https://resend.com) and verify your sending domain.
 2. Create an API key, set `RESEND_API_KEY`.
 3. Set `CONTACT_FROM_EMAIL` to an address on the verified domain, e.g.
-   `"Sio, Ed & Russ Website <website@edandruss.com>"`.
+   `"Ed & Russ Website <website@edandruss.com>"`.
 
 While testing you can leave `CONTACT_FROM_EMAIL` unset — Resend's sandbox sender
 is used, which only delivers to the account owner's address.
