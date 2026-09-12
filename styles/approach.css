@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Approach — the four-stage growth system ("Explore our approach")
+   ========================================================================== */
+.approach {
+  padding-bottom: var(--section-y);
+  background: var(--white);
+}
+
+.ap-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: clamp(2.25rem, 5vw, 4.5rem);
+  background: linear-gradient(158deg, #F4EFFF 0%, #EFF1FE 48%, #EAF0FF 100%);
+}
+.ap-panel::before {
+  content: "";
+  position: absolute;
+  right: -12%;
+  top: -38%;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 140, 255, 0.34), transparent 66%);
+  pointer-events: none;
+}
+
+.ap-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
+}
+.ap-title { font-size: clamp(2.1rem, 4vw, 3.3rem); max-width: 17ch; }
+.ap-lede {
+  color: var(--muted);
+  font-size: clamp(1.08rem, 1.3vw, 1.26rem);
+  max-width: 50ch;
+}
+
+/* ----- Step rail --------------------------------------------------------- */
+.ap-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 2.4vw, 2.25rem);
+}
+.ap-steps::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 27px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(180, 140, 255, 0.15), var(--purple) 18%, var(--blue) 82%, rgba(20, 93, 255, 0.15));
+  opacity: 0.45;
+}
+
+.ap-step { position: relative; }
+.ap-step-badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  background: linear-gradient(150deg, var(--blue-light), var(--navy));
+  box-shadow: 0 18px 32px -18px rgba(20, 93, 255, 0.85);
+}
+.ap-step:nth-child(2) .ap-step-badge { background: linear-gradient(150deg, #7FA1FF, #2B3FCB); }
+.ap-step:nth-child(3) .ap-step-badge { background: linear-gradient(150deg, var(--purple-light), #6F3FD8); }
+.ap-step:nth-child(4) .ap-step-badge { background: linear-gradient(150deg, #C9B4FF, var(--navy)); }
+
+.ap-step-phase {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple-ink);
+}
+.ap-step h3 { font-size: clamp(1.18rem, 1.5vw, 1.42rem); margin-bottom: 0.7rem; }
+.ap-step p { color: var(--muted); font-size: 0.99rem; max-width: 34ch; }
+
+/* ----- Principles strip -------------------------------------------------- */
+.ap-principles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-top: clamp(2.5rem, 4vw, 3.75rem);
+  padding-top: clamp(2rem, 3vw, 2.75rem);
+  border-top: 1px solid rgba(17, 26, 94, 0.10);
+}
+.ap-principle {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+.ap-principle svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 3px;
+  color: var(--purple-ink);
+}
+.ap-principle h4 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.ap-principle p { color: var(--muted); font-size: 0.95rem; max-width: 32ch; }
+
+.ap-cta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: clamp(2.25rem, 3.5vw, 3rem);
+}
+.ap-cta p { color: var(--muted); font-size: 1rem; max-width: 44ch; }

@@ -1,0 +1,31 @@
+{
+  "name": "sio-ed-russ",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sio, Ed & Russ — founder-led digital marketing agency, London.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.3.5",
+    "nodemailer": "6.9.16",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/nodemailer": "6.4.17",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.5",
+    "typescript": "5.7.3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

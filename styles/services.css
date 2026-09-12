@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Services
+   ========================================================================== */
+.services {
+  padding-block: var(--section-y);
+  background: var(--white);
+}
+
+.sv-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+.sv-title { font-size: clamp(2.2rem, 4.2vw, 3.6rem); max-width: 16ch; }
+
+/* Deliberately large: this is the section's supporting statement, so it reads
+   as a lede rather than body copy. */
+.sv-lede {
+  color: #4B5480;
+  font-size: clamp(1.16rem, 1.7vw, 1.52rem);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  max-width: 46ch;
+}
+
+.sv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.sv-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: clamp(1.9rem, 2.6vw, 2.75rem);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background-color 0.4s var(--ease);
+}
+.sv-card::after {
+  content: "";
+  position: absolute;
+  right: -22%;
+  bottom: -42%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 93, 255, 0.4), transparent 68%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.45s var(--ease);
+}
+.sv-card:hover { transform: translateY(-4px); }
+.sv-card:hover::after { opacity: 1; }
+
+.sv-num {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0.55;
+  margin-bottom: 1.4rem;
+}
+.sv-card h3 { font-size: clamp(1.4rem, 2.1vw, 1.95rem); max-width: 18ch; }
+
+.sv-meta { margin-top: 1.6rem; display: grid; gap: 0.3rem; }
+.sv-meta dt {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  opacity: 0.6;
+}
+.sv-meta dd { font-size: 0.98rem; max-width: 44ch; }
+.sv-meta dt + dd { margin-bottom: 1rem; }
+.sv-meta dd:last-child { margin-bottom: 0; }
+
+.sv-arrow { margin-top: auto; align-self: flex-start; }
+
+/* ----- Colour variants --------------------------------------------------- */
+.sv-navy {
+  background: linear-gradient(155deg, var(--navy) 0%, var(--navy-dark) 60%, var(--navy-deep) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+.sv-navy h3 { color: var(--white); }
+.sv-navy .sv-meta dd { color: rgba(255, 255, 255, 0.82); }
+.sv-navy .icon-btn { background: rgba(255, 255, 255, 0.12); }
+.sv-navy .icon-btn:hover { background: var(--blue); }
+
+.sv-white {
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.sv-white .sv-meta dd { color: var(--muted); }
+.sv-white:hover { background: #FBFAFF; }
+
+.sv-lav {
+  background: linear-gradient(150deg, var(--purple-soft) 0%, #F4EBFF 60%, #EDF1FF 100%);
+}
+.sv-lav .sv-meta dd { color: #5B5480; }
+.sv-lav .sv-num { color: #6B4BB5; opacity: 0.75; }

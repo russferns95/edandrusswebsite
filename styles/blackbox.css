@@ -1,0 +1,41 @@
+/* ==========================================================================
+   "Black box" section
+   ========================================================================== */
+.blackbox {
+  padding-block: var(--section-y);
+  background: var(--white);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.bb-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+.bb-title { font-size: clamp(2.3rem, 5vw, 4.2rem); }
+.bb-intro p { font-size: clamp(1.08rem, 1.3vw, 1.24rem); color: var(--muted); max-width: 48ch; }
+
+.bb-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 3.25rem);
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+}
+.bb-item { max-width: 40ch; }
+.bb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--purple-soft);
+  color: var(--navy);
+  margin-bottom: 1.35rem;
+}
+.bb-icon svg { width: 24px; height: 24px; }
+.bb-item h3 { font-size: clamp(1.2rem, 1.6vw, 1.45rem); margin-bottom: 0.7rem; }
+.bb-item p { color: var(--muted); }

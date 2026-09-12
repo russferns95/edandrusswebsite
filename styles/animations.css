@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Scroll reveals + ambient motion
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger inside grids */
+.feature-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.feature-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.feature-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+.bb-list .reveal:nth-child(2) { transition-delay: 0.1s; }
+.bb-list .reveal:nth-child(3) { transition-delay: 0.2s; }
+.ap-steps .reveal:nth-child(2) { transition-delay: 0.08s; }
+.ap-steps .reveal:nth-child(3) { transition-delay: 0.16s; }
+.ap-steps .reveal:nth-child(4) { transition-delay: 0.24s; }
+.sv-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.sv-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.sv-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes floatYSmall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-14px, 12px, 0) scale(1.04); }
+}
+
+.hv-sphere-1 { animation: floatY 11s ease-in-out infinite; }
+.hv-sphere-2 { animation: floatYSmall 8s ease-in-out infinite 0.6s; }
+.hv-blade { animation: drift 14s ease-in-out infinite; }
+.hv-ring { animation: slowSpin 60s linear infinite; }
+.hv-card-a { animation: floatYSmall 9s ease-in-out infinite 0.3s; }
+.hv-card-b { animation: floatYSmall 10s ease-in-out infinite 1.2s; }
+.hv-pill { animation: floatYSmall 12s ease-in-out infinite 0.9s; }
+.fcard-orb { animation: floatY 16s ease-in-out infinite; }
+.fcard-orb-sm { animation: floatYSmall 12s ease-in-out infinite 1s; }
+.fcard-shape { animation: floatY 18s ease-in-out infinite 1.4s; }
+.hero-wash { animation: drift 22s ease-in-out infinite; }
+.ab-shape { animation: slowSpin 90s linear infinite; }

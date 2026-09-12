@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Feature / statistic cards
+   ========================================================================== */
+.features { padding-bottom: var(--section-y); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1.05fr;
+  grid-auto-rows: minmax(200px, auto);
+  gap: 1.25rem;
+}
+
+.fcard {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 2.4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.fcard:hover { transform: translateY(-4px); }
+
+.fcard h3 { font-size: clamp(1.5rem, 2.2vw, 2.1rem); }
+.fcard p { color: var(--muted); max-width: 34ch; }
+
+/* Card 1 — large navy */
+.fcard-lead {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background: linear-gradient(155deg, var(--navy) 0%, var(--navy-dark) 55%, var(--navy-deep) 100%);
+  box-shadow: var(--shadow-lg);
+  justify-content: flex-end;
+  min-height: 420px;
+}
+.fcard-lead h3 { color: var(--white); max-width: 15ch; }
+.fcard-lead p { color: rgba(255, 255, 255, 0.78); margin-top: 1rem; }
+.fcard-lead .btn { margin-top: 1.75rem; }
+.fcard-body { position: relative; z-index: 2; }
+.fcard-tall .fcard-body { z-index: 2; }
+
+.fcard-lead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(8, 15, 66, 0.92) 30%, rgba(11, 20, 88, 0.35) 62%, transparent 88%);
+  pointer-events: none;
+}
+
+.fcard-orb {
+  position: absolute;
+  right: -70px;
+  top: -46px;
+  width: min(62%, 330px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.9), var(--blue-light) 34%, #0F3FD6 62%, rgba(11, 20, 88, 0.9) 100%);
+  box-shadow: 0 40px 80px -30px rgba(20, 93, 255, 0.6);
+}
+.fcard-orb-sm {
+  position: absolute;
+  right: 30%;
+  top: 26%;
+  width: min(16%, 78px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #fff, var(--purple-light) 45%, #7D4FE0 100%);
+  opacity: 0.9;
+}
+
+/* Card 2 — white statistic */
+.fcard-stat-light {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  justify-content: space-between;
+}
+.fstat-visual { position: relative; display: block; height: 62px; }
+.fs-shape { position: absolute; display: block; }
+.fs-shape-1 {
+  width: 46px; height: 46px; left: 0; top: 4px;
+  border-radius: 16px;
+  background: linear-gradient(140deg, var(--blue-light), var(--navy));
+  transform: rotate(-12deg);
+}
+.fs-shape-2 {
+  width: 34px; height: 34px; left: 40px; top: 20px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--purple-light), #7D4FE0);
+}
+.fs-shape-3 {
+  width: 22px; height: 22px; left: 82px; top: 2px;
+  border-radius: 8px;
+  background: var(--purple-soft);
+}
+
+.fstat-figure { font-size: clamp(2.6rem, 4.6vw, 3.9rem); letter-spacing: -0.045em; }
+.fstat-figure-sm { font-size: clamp(1.5rem, 2.2vw, 1.95rem); line-height: 1.15; }
+.fstat-label { margin-top: 0.6rem; color: var(--muted); font-size: 0.95rem; }
+
+/* Card 3 — navy statistic */
+.fcard-stat-navy {
+  grid-column: 2;
+  grid-row: 2;
+  background: linear-gradient(160deg, var(--navy-dark), var(--navy-deep));
+  box-shadow: var(--shadow-lg);
+  justify-content: space-between;
+}
+.fcard-stat-navy .fstat-figure { color: var(--white); }
+.fcard-stat-navy .fstat-label { color: rgba(255, 255, 255, 0.76); }
+.fstat-orbit { position: relative; display: block; height: 58px; }
+.fstat-orbit i {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+.fstat-orbit i:nth-child(1) {
+  width: 54px; height: 54px; left: 0; top: 0;
+  background: radial-gradient(circle at 32% 30%, #fff, var(--blue-light) 40%, #0C3AC9 100%);
+  box-shadow: 0 18px 34px -18px rgba(20, 93, 255, 0.9);
+}
+.fstat-orbit i:nth-child(2) {
+  width: 26px; height: 26px; left: 46px; top: 24px;
+  background: radial-gradient(circle at 34% 30%, #fff, var(--purple) 50%, #6F3FD8 100%);
+}
+
+/* Card 4 — white tall */
+.fcard-tall {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  justify-content: flex-start;
+}
+.fcard-tall p { margin-top: 1rem; }
+.fcard-tall .btn { margin-top: 1.75rem; }
+
+.fcard-tall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.94) 42%, rgba(255, 255, 255, 0.55) 66%, transparent 92%);
+  pointer-events: none;
+}
+
+.fcard-shape {
+  position: absolute;
+  right: -60px;
+  bottom: -70px;
+  width: min(66%, 300px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.9), rgba(180, 140, 255, 0.75) 34%, rgba(20, 93, 255, 0.5) 68%, rgba(16, 24, 95, 0.35) 100%);
+  filter: blur(0.4px);
+  pointer-events: none;
+}
+.fcard-shape::after {
+  content: "";
+  position: absolute;
+  left: -14%;
+  top: 12%;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #fff, var(--blue) 52%, var(--navy) 100%);
+  box-shadow: 0 18px 30px -18px rgba(20, 93, 255, 0.9);
+}

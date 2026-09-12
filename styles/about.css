@@ -1,0 +1,73 @@
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  background: linear-gradient(165deg, var(--navy) 0%, var(--navy-dark) 45%, var(--navy-deep) 100%);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  margin-inline: clamp(0px, 1.5vw, 20px);
+}
+.about h2,
+.about h3,
+.about p,
+.about a { color: var(--white); }
+
+.ab-glow { position: absolute; border-radius: 50%; pointer-events: none; }
+.ab-glow-1 {
+  width: 48vw; max-width: 700px; aspect-ratio: 1;
+  top: -22%; right: -12%;
+  background: radial-gradient(circle, rgba(180, 140, 255, 0.4), transparent 62%);
+}
+.ab-glow-2 {
+  width: 40vw; max-width: 560px; aspect-ratio: 1;
+  bottom: -28%; left: -14%;
+  background: radial-gradient(circle, rgba(20, 93, 255, 0.42), transparent 64%);
+}
+.ab-shape {
+  position: absolute;
+  right: 6%;
+  top: 18%;
+  width: 190px;
+  aspect-ratio: 1;
+  border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  pointer-events: none;
+}
+
+.ab-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+.about .ab-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--purple-light);
+  margin-bottom: 1.5rem;
+}
+.ab-eyebrow {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  opacity: 0.75;
+  margin-bottom: 0.9rem;
+}
+.ab-statement {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.4vw, 3.7rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+.about .ab-right p {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1.02rem, 1.2vw, 1.16rem);
+  max-width: 60ch;
+}
+.ab-right p + p { margin-top: 1.35rem; }
