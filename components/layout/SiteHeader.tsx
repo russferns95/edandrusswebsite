@@ -1,11 +1,14 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import BrandMark from './BrandMark';
 import { navLinks } from '@/lib/site';
 
 export default function SiteHeader() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -28,6 +31,7 @@ export default function SiteHeader() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
 
   /* Escape closes the mobile panel. */
   useEffect(() => {
@@ -52,6 +56,8 @@ export default function SiteHeader() {
     return () => query.removeEventListener('change', onChange);
   }, []);
 
+  const isCurrent = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+
   return (
     <header className={scrolled ? 'site-header is-scrolled' : 'site-header'} id="siteHeader">
       <div className="shell header-inner">
@@ -61,16 +67,18 @@ export default function SiteHeader() {
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <Link href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className="header-actions">
-          <a className="btn btn-primary btn-sm header-cta" href="#contact">
+          <Link className="btn btn-primary btn-sm header-cta" href="/contact">
             Get in touch
-          </a>
+          </Link>
 
           <button
             className="nav-toggle"
@@ -94,16 +102,20 @@ export default function SiteHeader() {
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMenuOpen(false)}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  aria-current={isCurrent(link.href) ? 'page' : undefined}
+                >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <a className="btn btn-primary btn-block" href="#contact" onClick={() => setMenuOpen(false)}>
+        <Link className="btn btn-primary btn-block" href="/contact" onClick={() => setMenuOpen(false)}>
           Get in touch
-        </a>
+        </Link>
       </div>
     </header>
   );

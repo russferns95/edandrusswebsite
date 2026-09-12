@@ -127,12 +127,59 @@ export const services: Service[] = [
   },
 ];
 
-/* ----- About / story ----------------------------------------------------- */
+/* ----- About -------------------------------------------------------------
+   Deliberately distinct from the story copy below: this says what the
+   business is, the story says how it came to work that way. */
+export const aboutParagraphs = [
+  'Ed & Russ is a founder-led digital marketing business based in London, working with ambitious brands across the UK and internationally.',
+  'When you partner with us you work directly with the specialists who architect, run and optimise your campaigns. There is no account layer sitting between you and the people doing the work.',
+  'Search, paid media and conversion-focused design are planned as one system rather than separate retainers, so every channel makes the others cheaper.',
+];
+
+/* ----- Our story ---------------------------------------------------------- */
 export const storyParagraphs = [
   'For years, the agency model has been broken. Large traditional marketing firms pitch clients using experienced directors, only to pass execution down to junior delegates.',
-  'At Ed & Russ, we operate differently. We are a founder-led digital marketing business based in London, serving brands across the UK and internationally. When you partner with us, you work directly with the specialists who architect, run, and optimize your campaigns.',
-  'We combine technical precision with commercial strategy\u2014merging deep Search Engine Optimisation (SEO), high-yield Pay-Per-Click (PPC) execution, and conversion-rate-optimised (CRO) web design into a single growth engine.',
+  'We built Ed & Russ to work the other way around. The specialists who win the account are the ones who stay on it, and the work is judged on the revenue it produces rather than the volume of reporting it generates.',
+  'That means combining technical precision with commercial strategy\u2014merging deep Search Engine Optimisation (SEO), high-yield Pay-Per-Click (PPC) execution, and conversion-rate-optimised (CRO) web design into a single growth engine.',
 ];
+
+/* ----- Per-page hero copy -------------------------------------------------
+   Each route gets its own heading, lede and meta description so the pages
+   rank independently instead of competing for the same terms. */
+export const pages = {
+  services: {
+    kicker: 'What we do',
+    title: 'Services built around growth.',
+    lede: 'From search visibility to paid acquisition and conversion-focused digital experiences, every service is designed to contribute to measurable commercial growth.',
+    metaTitle: 'Digital Marketing Services | SEO, PPC & Web Design',
+    metaDescription:
+      'SEO, Pay-Per-Click advertising, web design and content strategy from a founder-led London agency. Every service is measured against commercial growth.',
+  },
+  approach: {
+    kicker: 'How we work',
+    title: 'How we build a growth engine that compounds.',
+    lede: 'Every engagement runs on the same four stages. We start with the commercial reality of your business, fix what is leaking, then scale only the channels that prove they pay for themselves.',
+    metaTitle: 'Our Approach | Diagnose, Architect, Execute, Compound',
+    metaDescription:
+      'The four-stage process behind every Ed & Russ engagement, and the principles that keep senior specialists on your account from first audit onwards.',
+  },
+  about: {
+    kicker: 'Who we are',
+    title: 'A different kind of agency.',
+    lede: 'Founder-led digital marketing from London, built on direct access to the specialists who actually run your campaigns.',
+    metaTitle: 'About Us | Founder-Led Digital Marketing in London',
+    metaDescription:
+      'Ed & Russ is a founder-led digital marketing agency in London: senior specialists, no junior handovers, and reporting built around revenue.',
+  },
+  contact: {
+    kicker: 'Get in touch',
+    title: 'Let us look at your growth.',
+    lede: 'Tell us where your digital marketing is today and where you want it to go. We reply to every enquiry within one working day.',
+    metaTitle: 'Contact Us | Talk to a Founder',
+    metaDescription:
+      'Contact Ed & Russ for SEO, PPC, web design and content strategy. Send an enquiry and one of the founders will reply within one working day.',
+  },
+} as const;
 
 /* ----- Contact form options ---------------------------------------------- */
 export const serviceOptions = [

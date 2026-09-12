@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Reveal from '@/components/ui/Reveal';
 import { ArrowUpRightIcon } from '@/components/ui/Icons';
 import { services } from '@/lib/content';
@@ -8,20 +10,14 @@ const variantClass = {
   lav: 'sv-lav',
 } as const;
 
+/** Service cards. The page heading and lede come from PageHero above it. */
 export default function Services() {
   return (
     <section className="services" id="services" aria-labelledby="servicesHeading">
       <div className="shell">
-        <div className="sv-head">
-          <Reveal as="h2" className="sv-title" id="servicesHeading">
-            Services built around growth.
-          </Reveal>
-
-          <Reveal as="p" className="sv-lede">
-            From search visibility to paid acquisition and conversion-focused digital experiences, every
-            service is designed to contribute to measurable commercial growth.
-          </Reveal>
-        </div>
+        <h2 className="visually-hidden" id="servicesHeading">
+          What we do
+        </h2>
 
         <div className="sv-grid">
           {services.map((service) => (
@@ -38,13 +34,13 @@ export default function Services() {
                 <dd>{service.impact}</dd>
               </dl>
 
-              <a
+              <Link
                 className="icon-btn sv-arrow"
-                href="#contact"
+                href="/contact"
                 aria-label={`Enquire about ${service.title}`}
               >
                 <ArrowUpRightIcon />
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

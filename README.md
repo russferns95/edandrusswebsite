@@ -1,6 +1,6 @@
 # Ed & Russ — marketing site
 
-The landing page rebuilt as a **Next.js 16 (App Router) + TypeScript** application,
+A multi-page marketing site built with **Next.js 16 (App Router) + TypeScript**,
 converted from the original single-file HTML page
 (kept for reference in [`reference/`](reference/original-landing-page.html)).
 
@@ -99,21 +99,26 @@ not pick up new values.
 ```
 app/
   layout.tsx            Fonts, metadata, header/footer shell
-  page.tsx              Section composition, in page order
+  page.tsx              Home
+  services/page.tsx     Services
+  approach/page.tsx     Our approach
+  about/page.tsx        About + story
+  contact/page.tsx      Contact + enquiry form
   globals.css           Imports every stylesheet in cascade order
   api/contact/route.ts  Enquiry endpoint
   sitemap.ts robots.ts not-found.tsx
 
 components/
-  layout/     SiteHeader, SiteFooter, BrandMark, SkipLink, StructuredData
+  layout/     SiteHeader, SiteFooter, BrandMark, PageHero, SkipLink,
+              StructuredData
   sections/   Hero, FeatureCards, BlackBox, Approach, Services,
-              About, Story, ContactSection, ContactForm
+              About, Story, ContactSection, ContactForm, CtaBand
   ui/         Reveal, Icons
 
 hooks/useReveal.ts      Shared IntersectionObserver for scroll reveals
 lib/
-  site.ts               Name, contact details, navigation
-  content.ts            All marketing copy and section data
+  site.ts               Name, contact details, navigation routes
+  content.ts            All marketing copy, section data and page headings
   validation.ts         Form rules, shared by browser and server
   mail.ts               Provider-agnostic sending
   email-templates.ts    Enquiry + acknowledgement emails
@@ -121,6 +126,23 @@ lib/
 
 styles/                 One stylesheet per section
 ```
+
+### Pages
+
+| Route | Contents |
+| ----- | -------- |
+| `/` | Hero, feature mosaic, the "black box" pitch, closing CTA |
+| `/services` | The four service cards |
+| `/approach` | Four-stage process and operating principles |
+| `/about` | Who we are, plus the founding story |
+| `/contact` | Direct contact details and the enquiry form |
+
+Each page owns its `<h1>`, `<title>`, meta description and canonical URL, so
+they rank for their own terms rather than competing with each other.
+
+Adding a page: create `app/<name>/page.tsx`, export `metadata`, add copy to
+`pages` in `lib/content.ts`, then add the route to `navLinks` in `lib/site.ts`
+and to `app/sitemap.ts`.
 
 **Editing copy** — almost all text lives in `lib/content.ts`, and contact details
 and navigation in `lib/site.ts`. You rarely need to open a component to change

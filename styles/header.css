@@ -79,9 +79,9 @@
   transition: transform 0.32s var(--ease);
 }
 .nav-desktop a:hover,
-.nav-desktop a[aria-current="true"] { color: var(--text); }
+.nav-desktop a[aria-current="page"] { color: var(--text); }
 .nav-desktop a:hover::after,
-.nav-desktop a[aria-current="true"]::after { transform: scaleX(1); }
+.nav-desktop a[aria-current="page"]::after { transform: scaleX(1); }
 
 .header-actions { display: flex; align-items: center; gap: 0.75rem; }
 
@@ -128,3 +128,4 @@
   color: var(--text);
 }
 .mobile-nav a:not(.btn):hover { color: var(--blue); }
+.mobile-nav a[aria-current="page"] { color: var(--purple-ink); }

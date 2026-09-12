@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import BrandMark from './BrandMark';
 import { footerLinks, site } from '@/lib/site';
 
@@ -17,7 +19,7 @@ export default function SiteFooter() {
           <ul>
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
           </ul>

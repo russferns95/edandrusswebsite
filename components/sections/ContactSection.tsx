@@ -3,9 +3,13 @@ import Reveal from '@/components/ui/Reveal';
 import { MailIcon, PhoneIcon, PinIcon } from '@/components/ui/Icons';
 import { site } from '@/lib/site';
 
+/**
+ * Contact panel: direct details on the left, enquiry form on the right.
+ * The page's <h1> comes from PageHero above it.
+ */
 export default function ContactSection() {
   return (
-    <section className="cta" id="contact" aria-labelledby="ctaHeading">
+    <section className="cta cta-standalone" id="contact" aria-labelledby="ctaHeading">
       <div className="shell">
         <Reveal className="cta-panel">
           <span className="cta-orb cta-orb-1" aria-hidden="true" />
@@ -14,11 +18,11 @@ export default function ContactSection() {
           <div className="cta-inner">
             <div>
               <h2 className="cta-title" id="ctaHeading">
-                Ready to build a better growth engine?
+                Talk to us directly.
               </h2>
               <p className="cta-text">
-                Tell us where your digital marketing is today and where you want it to go. We will reply with
-                a straight answer on whether we can help.
+                Prefer email or phone? Reach us straight away on the details below — no gatekeepers, no
+                account managers.
               </p>
 
               <dl className="cta-details">

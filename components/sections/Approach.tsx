@@ -3,26 +3,17 @@ import { CheckCircleIcon } from '@/components/ui/Icons';
 import { approach } from '@/lib/content';
 
 /**
- * The four-stage operating model behind every engagement — the destination for
- * the "Explore our approach" call to action in the feature mosaic.
+ * The four-stage operating model behind every engagement. The page heading and
+ * lede come from PageHero above it.
  */
 export default function Approach() {
   return (
     <section className="approach" id="approach" aria-labelledby="approachHeading">
       <div className="shell">
         <div className="ap-panel">
-          <div className="ap-head">
-            <Reveal>
-              <p className="section-kicker">{approach.kicker}</p>
-              <h2 className="ap-title" id="approachHeading">
-                {approach.title}
-              </h2>
-            </Reveal>
-
-            <Reveal>
-              <p className="ap-lede">{approach.lede}</p>
-            </Reveal>
-          </div>
+          <h2 className="visually-hidden" id="approachHeading">
+            Our four-stage approach
+          </h2>
 
           <ol className="ap-steps">
             {approach.steps.map((step) => (
@@ -47,13 +38,6 @@ export default function Approach() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="ap-cta">
-            <a className="btn btn-primary" href="#contact">
-              Start with a diagnosis
-            </a>
-            <p>Tell us where you are now and we will show you what stage one would uncover.</p>
           </div>
         </div>
       </div>

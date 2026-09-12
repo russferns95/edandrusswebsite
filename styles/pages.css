@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Inner-page furniture — page headings and the closing CTA band
+   ========================================================================== */
+
+/* ----- Page hero (every route except home) ------------------------------- */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.75rem, 6vw, 5.5rem) 0 clamp(2rem, 4vw, 3.5rem);
+}
+.page-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+
+.page-hero-copy { position: relative; max-width: 44rem; }
+
+.page-hero-title {
+  font-size: clamp(2.4rem, 5.4vw, 4.2rem);
+  letter-spacing: -0.04em;
+  max-width: 18ch;
+}
+.page-hero-lede {
+  margin-top: 1.5rem;
+  max-width: 54ch;
+  font-size: clamp(1.16rem, 1.7vw, 1.52rem);
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  color: #4B5480;
+}
+
+/* Sections that follow a page hero should not re-pad their top edge. */
+.page-hero + .services,
+.page-hero + .approach,
+.page-hero + .cta { padding-top: 0; }
+
+/* ----- Closing CTA band --------------------------------------------------- */
+.cta-band-section { padding-bottom: var(--section-y); background: var(--bg-light); }
+
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: clamp(2.25rem, 4.5vw, 3.5rem) clamp(1.75rem, 4vw, 3.5rem);
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-dark) 50%, var(--navy-deep) 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-band-inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem 2.5rem;
+}
+
+.cta-band-title {
+  color: var(--white);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  max-width: 18ch;
+}
+.cta-band-text {
+  margin-top: 0.85rem;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+}
+
+.cta-band-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+.cta-band-mail {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.94rem;
+  border-bottom: 1px solid rgba(199, 155, 255, 0.5);
+  padding-bottom: 1px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.cta-band-mail:hover { color: var(--white); border-color: var(--purple-soft); }
+
+/* ----- Standalone contact page ------------------------------------------- */
+.cta-standalone { padding-top: 0; }
+
+@media (max-width: 767px) {
+  .cta-band { border-radius: var(--radius-lg); }
+  .cta-band-inner { flex-direction: column; align-items: stretch; }
+  .cta-band-actions { align-items: stretch; }
+  .cta-band-actions .btn { width: 100%; }
+  .cta-band-mail { text-align: center; }
+}

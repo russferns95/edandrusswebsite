@@ -1,6 +1,10 @@
 import Reveal from '@/components/ui/Reveal';
-import { storyParagraphs } from '@/lib/content';
+import { aboutParagraphs } from '@/lib/content';
 
+/**
+ * Navy "who we are" panel. The page's <h1> lives in PageHero, so the statement
+ * here is a distinct line rather than a repeat of the page title.
+ */
 export default function About() {
   return (
     <section className="about" id="about" aria-labelledby="aboutHeading">
@@ -11,14 +15,13 @@ export default function About() {
       <div className="shell ab-inner">
         <Reveal className="ab-left">
           <p className="ab-label">Founder-led digital marketing</p>
-          <h2 className="ab-eyebrow" id="aboutHeading">
-            About us
+          <h2 className="ab-statement" id="aboutHeading">
+            Senior people, start to finish.
           </h2>
-          <p className="ab-statement">A different kind of agency.</p>
         </Reveal>
 
         <Reveal className="ab-right">
-          {storyParagraphs.map((paragraph) => (
+          {aboutParagraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
         </Reveal>

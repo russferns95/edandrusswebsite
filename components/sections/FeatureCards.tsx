@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Reveal from '@/components/ui/Reveal';
 
 /**
@@ -20,9 +22,9 @@ export default function FeatureCards() {
                 Connected SEO, PPC and conversion systems designed around commercial outcomes—not vanity
                 metrics.
               </p>
-              <a className="btn btn-light btn-sm" href="#approach">
+              <Link className="btn btn-light btn-sm" href="/approach">
                 Explore our approach
-              </a>
+              </Link>
             </div>
             <span className="fcard-orb" aria-hidden="true" />
             <span className="fcard-orb-sm" aria-hidden="true" />
@@ -61,9 +63,9 @@ export default function FeatureCards() {
               <p>
                 Technical precision, performance marketing and conversion-focused design working together.
               </p>
-              <a className="btn btn-primary btn-sm" href="#services">
+              <Link className="btn btn-primary btn-sm" href="/services">
                 Discover more
-              </a>
+              </Link>
             </div>
             <span className="fcard-shape" aria-hidden="true" />
           </Reveal>

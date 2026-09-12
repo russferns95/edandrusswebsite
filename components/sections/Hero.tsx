@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import HeroVisual from './HeroVisual';
 import Reveal from '@/components/ui/Reveal';
 import { hero } from '@/lib/content';
@@ -17,12 +19,12 @@ export default function Hero() {
           <p className="hero-lede">{hero.lede}</p>
 
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#contact">
+            <Link className="btn btn-primary" href="/contact">
               Get in touch
-            </a>
-            <a className="btn btn-ghost" href="#services">
+            </Link>
+            <Link className="btn btn-ghost" href="/services">
               Explore services
-            </a>
+            </Link>
           </div>
 
           <ul className="hero-trust">
